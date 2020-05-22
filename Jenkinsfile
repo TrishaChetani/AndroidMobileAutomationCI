@@ -8,14 +8,14 @@ pipeline {
     }
     stages {
 
-        stage(CleanAll) {
+        stage(CleanCheckout) {
             steps {
                 cleanWs();
                 sh 'echo test'
                 git 'https://github.com/TrishaChetani/AndroidMobileAutomationCI.git'
             }
         }
-        stage(MavenBuild) {
+        stage(RunTest) {
             steps {
                 sh "mvn test -P local"
             }

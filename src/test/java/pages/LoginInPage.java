@@ -25,8 +25,10 @@ public class LoginInPage extends BasePage {
         waitForVisibilityOf(companyLogo);
         driver.findElement(emailId).clear();
         driver.findElement(emailId).sendKeys(id);
+        driver.navigate().back();
         driver.findElement(password).clear();
         driver.findElement(password).sendKeys(pass);
+        driver.navigate().back();
        // Assert.assertNull(driver.findElements(LoginInputError));
         driver.findElement(loginButton).click();
         return new LoginInPage(driver);

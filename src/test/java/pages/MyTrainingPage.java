@@ -1,8 +1,10 @@
 package pages;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.screenrecording.BaseStartScreenRecordingOptions;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebDriver;
 
 public class MyTrainingPage extends BasePage{
@@ -10,10 +12,10 @@ public class MyTrainingPage extends BasePage{
     By goButton = By.id("my_training_arrow");
     By readyButton = By.id("ready_button");
     By yesButton = By.id("yes_button");
-    By startButton = By.id("start_button");
+    By startButton = By.id("com.casparhealth.android.patient:id/start_button");
     By totalProgress = By.id("com.casparhealth.android.patient:id/totalProgress");
-    By skipButton = By.id("com.casparhealth.android.patient:id/skip_button");
-    By closeButton = By.id("com.casparhealth.android.patient:id/close_button");
+    By skipButton = By.id("skip_button");
+    By closeButton = By.id("close_button");
     By skipPopup = By.id("skip");
 
 
@@ -32,6 +34,7 @@ public class MyTrainingPage extends BasePage{
         driver.findElement(readyButton).click();
         waitForVisibilityOf(yesButton);
         driver.findElement(yesButton).click();
+        //setDeviceRotation();
         waitForVisibilityOf(skipButton);
         driver.findElement(skipButton).click();
         waitForVisibilityOf(skipPopup);

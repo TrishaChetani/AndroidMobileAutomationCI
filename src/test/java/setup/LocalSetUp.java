@@ -31,6 +31,7 @@ public class LocalSetUp extends BrowserStackTestNGTest {
                 DesiredCapabilities caps = new DesiredCapabilities();
                 desiredCapablities.setCapability("os_version", "7.0");
                 desiredCapablities.setCapability("device", "Samsung Galaxy S8");
+                desiredCapablities.setCapability("deviceOrientation", "PORTRAIT");
                 desiredCapablities.setCapability("real_mobile", "true");
                 desiredCapablities.setCapability("browserstack.appium_version", "1.15.0");
                 desiredCapablities.setCapability("browserstack.local", "true");

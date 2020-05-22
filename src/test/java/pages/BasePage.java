@@ -1,15 +1,16 @@
 package pages;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.HashMap;
 
 public class BasePage  {
     protected WebDriver driver;
+    public AndroidDriver androidDriver;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -75,5 +76,12 @@ public class BasePage  {
         tapObject.put("y", (double) 170); // in pixels from top
         tapObject.put("element", Double.valueOf(((RemoteWebElement) elementToTap).getId()));
         js.executeScript("mobile: tap", tapObject);
+    }
+
+    public void setDeviceRotation() {
+        ((Rotatable)driver).rotate(ScreenOrientation.LANDSCAPE);
+        ((Rotatable)driver).rotate(ScreenOrientation.PORTRAIT);
+        androidDriver.rotate(org.openqa.selenium.ScreenOrientation.PORTRAIT);
+       // androidDriver.rotate(ScreenOrientation.PORTRAIT);
     }
 }
