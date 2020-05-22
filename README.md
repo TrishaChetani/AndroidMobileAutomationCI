@@ -9,7 +9,6 @@
 - [Tools](#Tools)
 - [Installation](#installation)
 - [Usage](#Usage)
-- [FAQ](#faq)
 - [Support](#Support)
 - [License](#license)
  
@@ -72,22 +71,14 @@ curl -u "user:key" \
 - Clone this repo to your local machine using `https://github.com/TrishaChetani/AndroidMobileAutomationCI`
 
 #### Setup
-* Add Android path to bash_profile:`
-
+* Add Android path to bash_profile:Configure Android Emulator with Google APIs,  API_25 >,  x86
 ```
      export JAVA_HOME=$(/usr/libexec/java_home)
      export ANDROID_HOME=/Users/your username/Library/Android/sdk
      export PATH=$ANDROID_HOME/platform-tools:$PATH
      export PATH=$ANDROID_HOME/tools:$PATH`
 ```
-
--  Configure Android Emulator with Google APIs,  API_25 >,  x86
 - iOS Setup: Install Simulator iPhone 11 Pro with iOS 13.3
-
-.
-
-
-
 ---
 
 
@@ -95,14 +86,7 @@ curl -u "user:key" \
 
 ```
 mvn test -P local
-``
-
-
----
-
-
-## FAQ
-
+```
 
 ---
 
