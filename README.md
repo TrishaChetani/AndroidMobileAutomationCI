@@ -30,6 +30,7 @@ $  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install
 ```shell
 $ brew update
 $ brew install java
+$ export JAVA_HOME=$(/usr/libexec/java_home)
 $ java -v
 ```
 
@@ -41,6 +42,7 @@ $ java -v
 - Java
 - Jenkins pipeline
 - TestNg
+- Android studio
 
 ---
 
@@ -48,35 +50,39 @@ $ java -v
 
 > All the `code` required to get started is in bitbucket repository
  - [ Appium documentation ](http://appium.io/docs/en/about-appium/intro/)
- Installing Appium on OSX from terminal:
- * brew install node
- * npm install -g appium
- * brew install carthage
- * sudo authorize-ios
- * Add path to bash_profile: export PATH="/usr/local/bin:$PATH"
- 
- Installing Java JDK:
- * Install latest JDK
- * Add JAVA path to bash_profile: export JAVA_HOME=$(/usr/libexec/java_home)
+ Installing Appium on OSX from terminal
+ ```
+  brew install node
+  npm install -g appium
+  brew install carthage
+  sudo authorize-ios
+  Add path to bash_profile: export PATH="/usr/local/bin:$PATH"
+ ```
 
+- Ùpload the Apk to browserstack and follow the document 
+```
+curl -u "user:key" \
+-X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+-F "file=@/path/to/app/file/Application-debug.apk"
+```
+- [ BrowserStack Documentation for setup ](https://www.browserstack.com/app-automate/appium-testng)
 
 #### Clone
 
 - Clone this repo to your local machine using `https://github.com/TrishaChetani/AndroidMobileAutomationCI`
 
 #### Setup
-Android setup:
-* Install Android studio
-* Add Android path to bash_profile:
-    * export JAVA_HOME=$(/usr/libexec/java_home)
-    * export ANDROID_HOME=/Users/your username/Library/Android/sdk
-    * export PATH=$ANDROID_HOME/platform-tools:$PATH
-    * export PATH=$ANDROID_HOME/tools:$PATH
-* Configure Android Emulator with Google APIs,  API_25 >,  x86
+* Add Android path to bash_profile:`
 
+```
+     export JAVA_HOME=$(/usr/libexec/java_home)
+     export ANDROID_HOME=/Users/your username/Library/Android/sdk
+     export PATH=$ANDROID_HOME/platform-tools:$PATH
+     export PATH=$ANDROID_HOME/tools:$PATH`
+```
 
-iOS Setup:
-* Install Simulator iPhone 11 Pro with iOS 13.3
+-  Configure Android Emulator with Google APIs,  API_25 >,  x86
+- iOS Setup: Install Simulator iPhone 11 Pro with iOS 13.3
 
 .
 
