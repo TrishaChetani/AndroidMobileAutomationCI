@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class StepsPage extends BasePage {
+    By trainingText = By.id("title_my_training_text");
     By addCountButton = By.id("activityAddCountButton");
     By stepCount = By.id("stepsInput");
     By saveSteps = By.id("actionSaveSteps");

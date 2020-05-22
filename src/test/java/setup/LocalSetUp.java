@@ -30,7 +30,8 @@ public class LocalSetUp extends BrowserStackTestNGTest {
                 desiredCapablities.setCapability("platformName", "Android");
                 DesiredCapabilities caps = new DesiredCapabilities();
                 desiredCapablities.setCapability("os_version", "7.0");
-                desiredCapablities.setCapability("device", "Samsung Galaxy S8");
+                desiredCapablities.setCapability("printPageSourceOnFindFailure", true);
+                desiredCapablities.setCapability("device", "Google Pixel 4 XL");
                 desiredCapablities.setCapability("deviceOrientation", "PORTRAIT");
                 desiredCapablities.setCapability("real_mobile", "true");
                 desiredCapablities.setCapability("browserstack.appium_version", "1.15.0");

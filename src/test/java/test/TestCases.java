@@ -1,11 +1,9 @@
 package test;
 
 
-import com.aventstack.extentreports.TestListener;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.*;
 import setup.BrowserStackTestNGTest;
@@ -26,7 +24,7 @@ public class TestCases extends BrowserStackTestNGTest {
 
     @AfterTest
     public void logout() throws Exception {
-        new LogoutPages(driver).logout();
+        new LogoutPage(driver).logout();
     }
     @Parameters({"pass"})
     @Test (description="User sign in and navigate to training section and save the steps")
@@ -35,8 +33,9 @@ public class TestCases extends BrowserStackTestNGTest {
     @Description("Test Description: User sign in and navigate to training section and save the steps")
 
     public void navigateSignPage(String id) throws Exception {
-        new MyTrainingPage(driver).clickOnGoButton();
+
         new StepsPage(driver).saveStepsCount(id);
+        new MyTrainingPage(driver).clickOnGoButton();
 
     }
 

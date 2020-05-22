@@ -8,9 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.invisibilityOfElementLocated;
+
 public class BasePage  {
     protected WebDriver driver;
     public AndroidDriver androidDriver;
+    By loadingCircularProgress = By.id("loading_circular_progress");
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -78,10 +81,15 @@ public class BasePage  {
         js.executeScript("mobile: tap", tapObject);
     }
 
-    public void setDeviceRotation() {
+  /*  public void setDeviceRotation() {
         ((Rotatable)driver).rotate(ScreenOrientation.LANDSCAPE);
         ((Rotatable)driver).rotate(ScreenOrientation.PORTRAIT);
-        androidDriver.rotate(org.openqa.selenium.ScreenOrientation.PORTRAIT);
+        //  androidDriver.rotate(org.openqa.selenium.ScreenOrientation.PORTRAIT);
        // androidDriver.rotate(ScreenOrientation.PORTRAIT);
-    }
+    }*/
+
+   /* public void loadingIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, 40);
+        wait.until(invisibilityOfElementLocated(loadingCircularProgress));
+    }*/
 }
