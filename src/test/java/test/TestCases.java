@@ -5,16 +5,19 @@ import com.aventstack.extentreports.TestListener;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.*;
-import setup.SetUp;
+import setup.BrowserStackTestNGTest;
 
-public class TestCases extends SetUp {
+
+public class TestCases extends BrowserStackTestNGTest {
+
 
     @BeforeTest
     @Parameters({"id", "pass"})
     public void login(String id, String pass) throws Exception {
-        new WelcomePage(driver).signInButton();
+        new WelcomePage(driver).welcomeScreen();
         new LoginInPage(driver).loginInApplication(id, pass);
         // Set password, Consent functionality are used only first time when users login
         /* new SetNewPassword(driver).setNewPassword(pass);
@@ -26,7 +29,7 @@ public class TestCases extends SetUp {
         new LogoutPages(driver).logout();
     }
     @Parameters({"pass"})
-    @Test (priority = 0, description="User sign in and navigate to training section and save the steps")
+    @Test (description="User sign in and navigate to training section and save the steps")
     @Feature("Flow")
     @Story("Multiple")
     @Description("Test Description: User sign in and navigate to training section and save the steps")

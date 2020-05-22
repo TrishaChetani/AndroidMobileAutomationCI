@@ -13,8 +13,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class SetUp {
+public class LocalSetUp extends BrowserStackTestNGTest {
     protected AppiumDriver<MobileElement> driver;
+    public static final String USERNAME = "trisha11";
+    public static final String AUTOMATE_KEY = "XMezhPScCXges6fqYv4R";
+    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
     @BeforeSuite
     public void androidSetUpForAppium() throws MalformedURLException {
@@ -25,7 +28,14 @@ public class SetUp {
 
             if (platform.equalsIgnoreCase("android")) {
                 desiredCapablities.setCapability("platformName", "Android");
-                desiredCapablities.setCapability("deviceName", "78cd4aa1");
+                DesiredCapabilities caps = new DesiredCapabilities();
+                desiredCapablities.setCapability("os_version", "7.0");
+                desiredCapablities.setCapability("device", "Samsung Galaxy S8");
+                desiredCapablities.setCapability("real_mobile", "true");
+                desiredCapablities.setCapability("browserstack.appium_version", "1.15.0");
+                desiredCapablities.setCapability("browserstack.local", "true");
+                desiredCapablities.setCapability("browserstack.debug", "true");
+                desiredCapablities.setCapability("browserstack.console", "info");
                 desiredCapablities.setCapability("automationName", "uiautomator2");
                 desiredCapablities.setCapability("appPackage", "com.casparhealth.android.patient");
                 desiredCapablities.setCapability("appActivity", "com.casparhealth.android.patient.splash.SplashActivity");
@@ -35,9 +45,9 @@ public class SetUp {
                 desiredCapablities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone X");
                 desiredCapablities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
             }
-            File app = new File("/Users/chetatri/Desktop/mobile/Casper-health/src/test/resources/Caspar.apk");
+            File app = new File("bs://a8685afd141207c2c23cfad5d18b4d349d7c1a00");
             desiredCapablities.setCapability("app", app.getAbsolutePath());
-            URL url = new URL("http://127.0.0.1:4723/wd/hub");
+            URL url = new URL(URL);
             driver = new AppiumDriver<MobileElement>(url, desiredCapablities);
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         } catch (Exception exception) {

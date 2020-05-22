@@ -6,19 +6,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.HashMap;
-public class BasePage {
+
+public class BasePage  {
     protected WebDriver driver;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
     }
-    protected void waitForVisibilityOf(By locator) {
+    public void waitForVisibilityOf(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, 40);
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-    protected void waitForClickabilityOf(By locator) {
+    public void waitForClickabilityOf(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }

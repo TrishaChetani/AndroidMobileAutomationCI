@@ -16,7 +16,7 @@ public class WelcomePage extends BasePage  {
     }
 
     @Step("User navigate to through welcome screen taping next button")
-    public WelcomePage signInButton() {
+    public WelcomePage welcomeScreen() {
         waitForVisibilityOf(nextButtonText);
         driver.findElement(nextButtonText).click();
         driver.findElement(nextButtonText).click();

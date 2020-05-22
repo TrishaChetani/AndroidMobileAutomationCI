@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Single">
+    <test name="User sign in and navigate to training section and save the steps">
+        <parameter name="config" value="single.conf.json"/>
+        <parameter name="environment" value="galaxy_s7"/>
+        <parameter name="id" value="OYU2406"/>
+        <parameter name="pass" value="12345678"/>
+        <classes>
+            <class name="test.TestCases" />
+        </classes>
+    </test>
+</suite>
