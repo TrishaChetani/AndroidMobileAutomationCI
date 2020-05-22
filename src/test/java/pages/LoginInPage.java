@@ -23,12 +23,15 @@ public class LoginInPage extends BasePage {
     @Step("User signin to app using userId and password")
     public LoginInPage loginInApplication(String id, String pass) {
         waitForVisibilityOf(companyLogo);
+        waitForVisibilityOf(emailId);
         driver.findElement(emailId).clear();
         driver.findElement(emailId).sendKeys(id);
         driver.navigate().back();
+        waitForVisibilityOf(password);
         driver.findElement(password).clear();
         driver.findElement(password).sendKeys(pass);
         driver.navigate().back();
+        waitForVisibilityOf(loginButton);
        // Assert.assertNull(driver.findElements(LoginInputError));
         driver.findElement(loginButton).click();
         return new LoginInPage(driver);
