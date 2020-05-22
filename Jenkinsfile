@@ -17,7 +17,7 @@ pipeline {
         }
         stage(RunTest) {
             steps {
-                sh "mvn test -P local"
+                sh "mvn test -P single"
             }
         }
     }
