@@ -86,7 +86,7 @@ curl -u "user:key" \
 ## Usage
 
 ```
-mvn test -P local
+mvn test -P single
 ```
 
 ---
