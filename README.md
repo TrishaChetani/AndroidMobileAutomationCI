@@ -85,7 +85,7 @@ curl -u "user:key" \
 
 
 ## Usage
-- Test work locally very smoothly.  
+- Test work locally very smoothly on real devices provided we need to change the capabilities.  
 ````
 config/TestNG.xml
 ````
