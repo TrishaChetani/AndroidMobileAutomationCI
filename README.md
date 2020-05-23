@@ -42,6 +42,7 @@ $ java -v
 - Jenkins pipeline
 - TestNg
 - Android studio
+- Allure test reporting
 
 ---
 
