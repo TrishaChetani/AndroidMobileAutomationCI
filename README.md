@@ -85,13 +85,18 @@ curl -u "user:key" \
 
 
 ## Usage
-
+- Test work locally very smoothly.  
+````
+config/TestNG.xml
+````
+- Run on Browserstack
 ```
 mvn test -P single
 ```
 
 ---
 ## Challenges
+
 Currently while running on browserstack the device changes it orientation
 ```
 https://streamable.com/9z8lbh
