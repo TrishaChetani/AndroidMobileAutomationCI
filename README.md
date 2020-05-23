@@ -9,6 +9,7 @@
 - [Tools](#Tools)
 - [Installation](#installation)
 - [Usage](#Usage)
+- [Challenge](#challenge)
 - [Support](#Support)
 - [License](#license)
  
@@ -90,8 +91,12 @@ mvn test -P single
 ```
 
 ---
-
-
+## Challenges
+Currently while running on browserstack the device changes it orientation
+```
+https://streamable.com/9z8lbh
+```
+---
 ## Support
 >agarwalatrisha1212@gmail.com
 
